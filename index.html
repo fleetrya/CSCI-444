@@ -1,24 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Standalone Observable Plot and D3 Visualization</title>
-    <!-- Include Observable Plot and Runtime Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.0/dist/plot.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js"></script>
-    <!-- Include D3 Library -->
-    <script src="https://cdn.jsdelivr.net/npm/d3@7.0.0/dist/d3.min.js"></script>
-    <!-- Link to the Observable JavaScript file -->
-    <script src="./dc99d6d5615f1f6e@1053.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Observable Notebook Embed</title>
 </head>
 <body>
-    <div id="observable-content"></div>
-
-    <script>
-        // Initialize the Observable runtime and attach the module to the HTML
-        const runtime = new observablehq.Runtime();
-        runtime.module(define, observablehq.Inspector.into(document.getElementById("observable-content")));
-    </script>
+  <!-- Observable notebook embedded here -->
+  <iframe width="100%" height="500" frameborder="0"
+    src="https://observablehq.com/embed/dc99d6d5615f1f6e@latest?cell=*"></iframe>
 </body>
 </html>
