@@ -5,14 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 4 Visualization</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="dc99d6d5615f1f6e@1053.js" type="module"></script> 
-</head>
-<body>
-    <h1>Project 4 Visualization</h1>
-    <div id="visualization"></div>
     <script type="module">
         import define from './dc99d6d5615f1f6e@1053.js';
-        
+        import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+
         const runtime = new Runtime();
         const main = runtime.module(define, name => {
             if (name === "force" || name === "graph" || name === "legend") {
@@ -20,5 +16,9 @@
             }
         });
     </script>
+</head>
+<body>
+    <h1>Project 4 Visualization</h1>
+    <div id="visualization"></div>
 </body>
 </html>
