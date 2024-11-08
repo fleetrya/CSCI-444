@@ -7,6 +7,7 @@ export default function define(runtime, observer) {
 
   main.variable(observer()).define(["md"], () => md`# Project 4`);
 
+  // Bar Graph for Vote Type and Percentage of Bills
   main.variable(observer("graph")).define("graph", ["Plot", "csvData"], (Plot, csvData) =>
     Plot.plot({
       title: 'Vote Type in the 1st Session of the 117th Congress',
@@ -36,6 +37,7 @@ export default function define(runtime, observer) {
     })
   );
 
+  // Force-Directed Graph Visualization
   main.variable(observer("force")).define("force", ["d3", "jsonData", "invalidation"], (d3, jsonData, invalidation) => {
     const width = 1400;
     const height = 1000;
@@ -72,7 +74,7 @@ export default function define(runtime, observer) {
         .attr("y", height + 30)
         .attr("font-size", "18px")
         .attr("fill", "#000")
-        .text("Results based on Laws with an Offical 'Short Title' and a Recorded Vote.");
+        .text("Results based on Laws with an Official 'Short Title' and a Recorded Vote.");
 
     const link = svg.append("g")
         .attr("stroke", "#999")
@@ -149,6 +151,7 @@ export default function define(runtime, observer) {
     return svg.node();
   });
 
+  // Load CSV and JSON data
   main.variable(observer("csvData")).define("csvData", async () => await d3.csv("117_Bill_Percentage.csv"));
   main.variable(observer("jsonData")).define("jsonData", async () => await d3.json("117th_congress3.json"));
 
