@@ -3,11 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Observable Notebook Embed</title>
+  <title>Full Page Observable Notebook Embed</title>
+  <style>
+    /* Set html and body to 100% height */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* Prevent scrolling */
+    }
+    /* Ensure iframe takes full page height and width */
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none; /* Removes border around iframe */
+    }
+  </style>
 </head>
 <body>
-  <!-- Observable notebook embedded here -->
-  <iframe width="100%" height="500" frameborder="0"
-    src="https://observablehq.com/embed/dc99d6d5615f1f6e@latest?cell=*"></iframe>
+  <!-- Full-page Observable notebook embed -->
+  <iframe src="https://observablehq.com/embed/dc99d6d5615f1f6e@latest?cell=*"></iframe>
 </body>
 </html>
