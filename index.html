@@ -3,20 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Full Page Observable Notebook Embed</title>
+  <title>Adjusted Full Page Observable Notebook Embed</title>
   <style>
-    /* Set html and body to 100% height */
+    /* Set html and body to 100% height with no margins */
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden; /* Prevent scrolling */
+      overflow: hidden; /* Prevents scrolling */
+      box-sizing: border-box;
     }
     /* Ensure iframe takes full page height and width */
     iframe {
       width: 100%;
       height: 100%;
       border: none; /* Removes border around iframe */
+      display: block; /* Eliminates any small space below the iframe */
+      box-sizing: border-box;
     }
   </style>
 </head>
