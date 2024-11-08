@@ -4,17 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Standalone Observable Plot</title>
-    <!-- Include Observable Plot Library -->
+    <!-- Include Observable Plot and Runtime Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.0/dist/plot.umd.min.js"></script>
-    <!-- Include Observable Runtime -->
     <script src="https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js"></script>
-    <!-- Include the Observable notebook JavaScript file -->
-    <script src="./dc99d6d5615f1f6e@1053.js"></script>
 </head>
 <body>
     <div id="observable-content"></div>
 
     <script>
+        // Inline the contents of dc99d6d5615f1f6e@1053.js
+        function define(runtime, observer) {
+          const main = runtime.module();
+          function toString() { return this.url; }
+          const fileAttachments = new Map([
+            // If you have additional file attachments, specify them here with URLs.
+          ]);
+          main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
+
+          // Add the rest of the code as per dc99d6d5615f1f6e@1053.js
+          // ... (including all definitions and variables up to the end of the file)
+          
+          return main;
+        }
+
         // Initialize the Observable runtime and attach the module to the HTML
         const runtime = new observablehq.Runtime();
         runtime.module(define, observablehq.Inspector.into(document.getElementById("observable-content")));
