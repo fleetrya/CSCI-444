@@ -4,33 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Standalone Observable Plot</title>
-    <style>
-        /* Basic styling */
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-    </style>
     <!-- Observable Plot Library -->
     <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.0/dist/plot.umd.min.js"></script>
 </head>
 <body>
-    <div id="plot"></div>
-    <script>
-        const data = [ /* your data here */ ];
+    <div id="observable-content"></div>
 
-        const plot = Plot.plot({
-            marks: [
-                Plot.lineY(data, {x: "x", y: "y"})
-                // Define your plot configuration
-            ]
-        });
+    <script type="module">
+        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+        import define from "./dc99d6d5615f1f6e@1053.js"; // Link to your uploaded file
 
-        document.getElementById("plot").appendChild(plot);
+        const runtime = new Runtime();
+        runtime.module(define, Inspector.into(document.getElementById("observable-content")));
     </script>
 </body>
 </html>
