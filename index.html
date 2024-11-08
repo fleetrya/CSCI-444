@@ -3,33 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Standalone Observable Plot</title>
-    <!-- Include Observable Plot and Runtime Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.0/dist/plot.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js"></script>
+    <title>Project 4 Visualization</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="dc99d6d5615f1f6e@1053.js" type="module"></script> 
 </head>
 <body>
-    <div id="observable-content"></div>
-
-    <script>
-        // Inline the contents of dc99d6d5615f1f6e@1053.js
-        function define(runtime, observer) {
-          const main = runtime.module();
-          function toString() { return this.url; }
-          const fileAttachments = new Map([
-            // If you have additional file attachments, specify them here with URLs.
-          ]);
-          main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
-
-          // Add the rest of the code as per dc99d6d5615f1f6e@1053.js
-          // ... (including all definitions and variables up to the end of the file)
-          
-          return main;
-        }
-
-        // Initialize the Observable runtime and attach the module to the HTML
-        const runtime = new observablehq.Runtime();
-        runtime.module(define, observablehq.Inspector.into(document.getElementById("observable-content")));
+    <h1>Project 4 Visualization</h1>
+    <div id="visualization"></div>
+    <script type="module">
+        import define from './dc99d6d5615f1f6e@1053.js';
+        
+        const runtime = new Runtime();
+        const main = runtime.module(define, name => {
+            if (name === "force" || name === "graph" || name === "legend") {
+                return new Inspector(document.querySelector("#visualization"));
+            }
+        });
     </script>
 </body>
 </html>
