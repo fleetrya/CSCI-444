@@ -8,14 +8,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.0/dist/plot.umd.min.js"></script>
     <!-- Include Observable Runtime -->
     <script src="https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js"></script>
-    <!-- Include the downloaded Observable notebook JavaScript file -->
+    <!-- Include the Observable notebook JavaScript file -->
     <script src="./dc99d6d5615f1f6e@1053.js"></script>
 </head>
 <body>
     <div id="observable-content"></div>
 
     <script>
-        // Initialize Observable runtime and attach the module to the HTML
+        // Initialize the Observable runtime and attach the module to the HTML
         const runtime = new observablehq.Runtime();
         runtime.module(define, observablehq.Inspector.into(document.getElementById("observable-content")));
     </script>
